@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:hallo/login.dart';
+import 'package:hallo/mainPage.dart';
 
-class wlecome_page extends StatelessWidget {
+class wlecome_page extends StatefulWidget {
+  @override
+  State<wlecome_page> createState() => _wlecome_pageState();
+}
+
+class _wlecome_pageState extends State<wlecome_page> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +32,7 @@ class wlecome_page extends StatelessWidget {
                                 child: Text("valley",
                                     // style: TextStyle(fontFamily: "GallientRegular", fontSize: 80)),
                                     style: GoogleFonts.getFont(
-                                        "Playfair Display",
+                                      "Playfair Display",
                                       textStyle: TextStyle(
                                           fontSize: 80, color: Colors.white),
                                     )),
@@ -36,17 +41,18 @@ class wlecome_page extends StatelessWidget {
                           ),
                         ),
                       ),
-                    
+
                       Container(
                         child: TextButton(
                           style: ButtonStyle(
                               foregroundColor: MaterialStateProperty.all(
                                   Colors.white)),
                           onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context){
-                              return login();
-                            }
-                            ));
+                            Navigator.of(context).push(
+                                MaterialPageRoute(builder: (context) {
+                                  return menu();
+                                }
+                                ));
                           },
                           child: Icon(
                             Icons.arrow_forward_outlined,
@@ -57,7 +63,7 @@ class wlecome_page extends StatelessWidget {
                           shape: BoxShape.circle,
                           border: Border.all(
                               width: 20,
-                              color:Color(0xFFebe3cf)
+                              color: Color(0xFFebe3cf)
                           ),
                         ),
                         margin: EdgeInsets.only(bottom: 30),
@@ -67,21 +73,5 @@ class wlecome_page extends StatelessWidget {
               ],
             )));
   }
-  // Route _createRoute() {
-  //   return PageRouteBuilder(
-  //     pageBuilder: (context, animation, secondaryAnimation) => login(),
-  //     transitionsBuilder: (context, animation, secondaryAnimation, child) {
-  //       const begin = Offset(0.0, 1.0);
-  //       const end = Offset.zero;
-  //       const curve = Curves.ease;
-  //
-  //       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-  //
-  //       return SlideTransition(
-  //         position: animation.drive(tween),
-  //         child: child,
-  //       );
-  //     },
-  //   );
-  // }
 }
+
