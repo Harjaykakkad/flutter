@@ -525,7 +525,7 @@ class _allState extends State<all> {
                     Container(
                       alignment: Alignment.bottomCenter,
                       margin: EdgeInsets.only(bottom: 10),
-                      child: Text("© Kuldeep Sonara",
+                      child: Text("© Harjay kakkad",
                           style: GoogleFonts.getFont("Playfair Display",
                               textStyle: TextStyle(fontSize: 18))),
                     )
